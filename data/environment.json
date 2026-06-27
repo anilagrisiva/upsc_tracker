@@ -1,0 +1,171 @@
+{
+  "Environment": {
+
+    "Ecology": [
+      "Ecology - Basics",
+      "Ecosystem",
+      "Structure of Ecosystem",
+      "Functions of Ecosystem",
+      "Food Chain",
+      "Food Web",
+      "Ecological Pyramid",
+      "Ecological Succession",
+      "Ecological Niche",
+      "Biomes"
+    ],
+
+    "Biodiversity": [
+      "Biodiversity",
+      "Levels of Biodiversity",
+      "Genetic Diversity",
+      "Species Diversity",
+      "Ecosystem Diversity",
+      "Biodiversity Hotspots",
+      "Endemic Species",
+      "Endangered Species",
+      "Keystone Species",
+      "Flagship Species",
+      "Umbrella Species",
+      "Invasive Alien Species"
+    ],
+
+    "Conservation": [
+      "In-Situ Conservation",
+      "Ex-Situ Conservation",
+      "National Parks",
+      "Wildlife Sanctuaries",
+      "Biosphere Reserves",
+      "Conservation Reserves",
+      "Community Reserves",
+      "Sacred Groves",
+      "Gene Banks",
+      "Seed Banks",
+      "Botanical Gardens",
+      "Zoological Parks"
+    ],
+
+    "Climate Change": [
+      "Climate Change",
+      "Global Warming",
+      "Greenhouse Effect",
+      "Greenhouse Gases",
+      "Carbon Cycle",
+      "Carbon Footprint",
+      "Carbon Sequestration",
+      "Ocean Acidification",
+      "Climate Mitigation",
+      "Climate Adaptation"
+    ],
+
+    "Pollution": [
+      "Air Pollution",
+      "Water Pollution",
+      "Soil Pollution",
+      "Noise Pollution",
+      "Marine Pollution",
+      "Plastic Pollution",
+      "Thermal Pollution",
+      "Radioactive Pollution",
+      "E-Waste",
+      "Biomedical Waste",
+      "Solid Waste Management",
+      "Hazardous Waste"
+    ],
+
+    "Environmental Impact Assessment": [
+      "Environmental Impact Assessment",
+      "Strategic Environmental Assessment",
+      "Carrying Capacity",
+      "Environmental Clearance",
+      "Environmental Audit"
+    ],
+
+    "International Conventions": [
+      "UNFCCC",
+      "Kyoto Protocol",
+      "Paris Agreement",
+      "Montreal Protocol",
+      "Convention on Biological Diversity",
+      "CITES",
+      "Ramsar Convention",
+      "Bonn Convention",
+      "Basel Convention",
+      "Stockholm Convention",
+      "Minamata Convention",
+      "UNCCD"
+    ],
+
+    "Indian Environmental Laws": [
+      "Environment Protection Act 1986",
+      "Wildlife Protection Act 1972",
+      "Forest Conservation Act",
+      "Biological Diversity Act",
+      "Water Act 1974",
+      "Air Act 1981",
+      "National Green Tribunal Act",
+      "Compensatory Afforestation"
+    ],
+
+    "Protected Areas of India": [
+      "National Parks",
+      "Wildlife Sanctuaries",
+      "Tiger Reserves",
+      "Elephant Reserves",
+      "Biosphere Reserves",
+      "Marine Protected Areas",
+      "Ramsar Sites"
+    ],
+
+    "Species in News": [
+      "Tiger",
+      "Asiatic Lion",
+      "Snow Leopard",
+      "Indian Elephant",
+      "One-Horned Rhinoceros",
+      "Gangetic Dolphin",
+      "Great Indian Bustard",
+      "Olive Ridley Turtle",
+      "Red Panda",
+      "Nilgiri Tahr"
+    ],
+
+    "Forests": [
+      "Forest Types of India",
+      "Social Forestry",
+      "Agro Forestry",
+      "Urban Forestry",
+      "Joint Forest Management",
+      "Forest Survey of India"
+    ],
+
+    "Disaster and Environment": [
+      "Floods",
+      "Drought",
+      "Cyclones",
+      "Heat Waves",
+      "Landslides",
+      "Forest Fires",
+      "Disaster Risk Reduction"
+    ],
+
+    "Renewable Energy": [
+      "Solar Energy",
+      "Wind Energy",
+      "Hydroelectric Power",
+      "Biomass Energy",
+      "Geothermal Energy",
+      "Tidal Energy",
+      "Green Hydrogen"
+    ],
+
+    "Organizations": [
+      "MoEFCC",
+      "Central Pollution Control Board",
+      "State Pollution Control Board",
+      "National Biodiversity Authority",
+      "Forest Survey of India",
+      "Wildlife Institute of India",
+      "National Tiger Conservation Authority"
+    ]
+  }
+}

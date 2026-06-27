@@ -1,0 +1,160 @@
+{
+  "Science & Technology": {
+
+    "Basics of Science": [
+      "Scientific Method",
+      "Measurement and SI Units",
+      "Physical Quantities",
+      "Matter",
+      "States of Matter",
+      "Atoms and Molecules",
+      "Periodic Table",
+      "Chemical Bonding"
+    ],
+
+    "Physics": [
+      "Motion",
+      "Force and Laws of Motion",
+      "Work Energy and Power",
+      "Gravitation",
+      "Pressure",
+      "Heat",
+      "Temperature",
+      "Thermodynamics",
+      "Waves",
+      "Sound",
+      "Light",
+      "Reflection",
+      "Refraction",
+      "Optical Instruments",
+      "Electricity",
+      "Current Electricity",
+      "Magnetism",
+      "Electromagnetic Induction",
+      "Modern Physics",
+      "Semiconductors"
+    ],
+
+    "Chemistry": [
+      "Atomic Structure",
+      "Chemical Reactions",
+      "Acids Bases and Salts",
+      "Metals and Non-Metals",
+      "Carbon and its Compounds",
+      "Hydrocarbons",
+      "Polymers",
+      "Fuels",
+      "Environmental Chemistry",
+      "Everyday Chemistry"
+    ],
+
+    "Biology": [
+      "Cell",
+      "Cell Division",
+      "Biomolecules",
+      "Genetics",
+      "Evolution",
+      "Plant Physiology",
+      "Human Physiology",
+      "Digestive System",
+      "Respiratory System",
+      "Circulatory System",
+      "Nervous System",
+      "Endocrine System",
+      "Immune System",
+      "Reproductive System",
+      "Nutrition",
+      "Diseases",
+      "Vaccines",
+      "Biotechnology"
+    ],
+
+    "Health": [
+      "Public Health",
+      "Nutrition",
+      "Communicable Diseases",
+      "Non-Communicable Diseases",
+      "National Health Programmes",
+      "Immunization",
+      "Mental Health",
+      "Antimicrobial Resistance"
+    ],
+
+    "Space Technology": [
+      "ISRO",
+      "Launch Vehicles",
+      "Satellites",
+      "Navigation Systems",
+      "Remote Sensing",
+      "Space Missions",
+      "Planetary Exploration",
+      "Human Spaceflight Programme"
+    ],
+
+    "Information Technology": [
+      "Computer Basics",
+      "Internet",
+      "Cloud Computing",
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Deep Learning",
+      "Blockchain",
+      "Cyber Security",
+      "Quantum Computing",
+      "Internet of Things",
+      "5G and 6G"
+    ],
+
+    "Defence Technology": [
+      "Missile Technology",
+      "Ballistic Missiles",
+      "Cruise Missiles",
+      "Radar",
+      "Electronic Warfare",
+      "Drones",
+      "Hypersonic Technology",
+      "Naval Systems"
+    ],
+
+    "Energy": [
+      "Conventional Energy",
+      "Renewable Energy",
+      "Solar Energy",
+      "Wind Energy",
+      "Hydrogen Energy",
+      "Nuclear Energy",
+      "Fusion Technology",
+      "Battery Technology"
+    ],
+
+    "Emerging Technologies": [
+      "Nanotechnology",
+      "Robotics",
+      "3D Printing",
+      "Biotechnology",
+      "Genetic Engineering",
+      "CRISPR",
+      "Stem Cell Technology",
+      "Synthetic Biology"
+    ],
+
+    "Environmental Science": [
+      "Climate Science",
+      "Carbon Capture",
+      "Green Technologies",
+      "Waste Management Technologies",
+      "Clean Energy Technologies"
+    ],
+
+    "Indian Science and Technology": [
+      "DRDO",
+      "CSIR",
+      "ICMR",
+      "BARC",
+      "Department of Biotechnology",
+      "National Innovation Mission",
+      "Startup India Innovation",
+      "Digital Public Infrastructure"
+    ]
+  }
+}

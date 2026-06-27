@@ -1,0 +1,113 @@
+{
+    "CSAT": {
+
+        "Comprehension": [
+            "Reading Comprehension Basics",
+            "Passage Analysis",
+            "Inference Based Questions",
+            "Fact vs Opinion",
+            "Author's Tone and Intent",
+            "Vocabulary in Context",
+            "Theme Identification",
+            "Summary Based Questions",
+            "Statement Based Questions",
+            "Practice Passages"
+        ],
+
+        "Interpersonal Skills Including Communication Skills": [
+            "Communication Process",
+            "Verbal Communication",
+            "Non-Verbal Communication",
+            "Listening Skills",
+            "Interpersonal Relationships",
+            "Conflict Resolution",
+            "Emotional Intelligence Basics",
+            "Team Communication"
+        ],
+
+        "Logical Reasoning": [
+            "Statements and Conclusions",
+            "Statements and Assumptions",
+            "Statements and Arguments",
+            "Cause and Effect",
+            "Course of Action",
+            "Assertion and Reason",
+            "Syllogism",
+            "Logical Connectives",
+            "Decision Making",
+            "Critical Reasoning"
+        ],
+
+        "Analytical Ability": [
+            "Coding-Decoding",
+            "Blood Relations",
+            "Direction Sense",
+            "Ranking",
+            "Seating Arrangement",
+            "Puzzle Test",
+            "Data Sufficiency",
+            "Input Output",
+            "Pattern Recognition",
+            "Analytical Puzzles"
+        ],
+
+        "Decision Making and Problem Solving": [
+            "Administrative Situations",
+            "Ethical Decision Making",
+            "Prioritization",
+            "Public Administration Scenarios",
+            "Crisis Management",
+            "Problem Solving Techniques"
+        ],
+
+        "General Mental Ability": [
+            "Number Series",
+            "Alphabet Series",
+            "Odd One Out",
+            "Analogy",
+            "Classification",
+            "Coding Patterns",
+            "Calendar",
+            "Clock",
+            "Mathematical Operations",
+            "Logical Sequence"
+        ],
+
+        "Basic Numeracy": [
+            "Number System",
+            "LCM and HCF",
+            "Simplification",
+            "Decimals",
+            "Fractions",
+            "Percentages",
+            "Ratio and Proportion",
+            "Average",
+            "Profit and Loss",
+            "Simple Interest",
+            "Compound Interest",
+            "Time and Work",
+            "Pipes and Cisterns",
+            "Time Speed Distance",
+            "Boats and Streams",
+            "Ages",
+            "Partnership",
+            "Mixture and Allegation",
+            "Permutation and Combination",
+            "Probability",
+            "Quadratic Equations",
+            "Logarithms",
+            "Surds and Indices"
+        ],
+
+        "Data Interpretation": [
+            "Tables",
+            "Bar Graphs",
+            "Line Graphs",
+            "Pie Charts",
+            "Mixed Graphs",
+            "Caselets",
+            "Data Comparison",
+            "Percentage Based DI"
+        ]
+    }
+}

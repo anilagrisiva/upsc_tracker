@@ -1,0 +1,186 @@
+{
+  "Geography": {
+
+    "Geomorphology": [
+      "Origin of Earth",
+      "Interior of Earth",
+      "Rocks",
+      "Rock Cycle",
+      "Earthquakes",
+      "Volcanoes",
+      "Plate Tectonics",
+      "Continental Drift Theory",
+      "Sea Floor Spreading",
+      "Mountain Building",
+      "Weathering",
+      "Mass Wasting",
+      "Erosion",
+      "Landforms",
+      "Geomorphic Cycle (Davis)",
+      "Isostasy",
+      "Geochronology (basic)"
+    ],
+
+    "Climatology": [
+      "Atmosphere",
+      "Composition of Atmosphere",
+      "Structure of Atmosphere",
+      "Insolation",
+      "Heat Budget",
+      "Temperature",
+      "Pressure Belts",
+      "Planetary Winds",
+      "Local Winds",
+      "Jet Streams",
+      "Air Masses",
+      "Fronts",
+      "Cyclones",
+      "Anticyclones",
+      "Monsoon",
+      "El Nino",
+      "La Nina",
+      "Western Disturbances",
+      "Clouds",
+      "Precipitation",
+      "Humidity",
+      "Atmospheric Stability",
+      "Temperature Inversion"
+    ],
+
+    "Oceanography": [
+      "Relief of Ocean Floor",
+      "Ocean Temperature",
+      "Ocean Salinity",
+      "Ocean Currents",
+      "Tides",
+      "Waves",
+      "Coral Reefs",
+      "Marine Resources",
+      "Ocean Deposits",
+      "Tsunami",
+      "Indian Ocean Dipole (IOD)",
+      "Thermohaline Circulation",
+      "Upwelling & Downwelling"
+    ],
+
+    "Biogeography": [
+      "Biosphere",
+      "Ecosystem",
+      "Biomes",
+      "Natural Vegetation",
+      "Grasslands",
+      "Forests",
+      "Deserts",
+      "Tundra",
+      "Biodiversity",
+      "Wildlife Distribution",
+      "Ecological Succession"
+    ],
+
+    "World Geography": [
+      "Continents",
+      "Major Mountain Ranges",
+      "Major Plateaus",
+      "Major Plains",
+      "Major Rivers",
+      "Major Lakes",
+      "Major Deserts",
+      "Major Islands",
+      "Important Straits",
+      "Important Seas",
+      "Important Gulfs",
+      "Climate Regions",
+      "World Time Zones"
+    ],
+
+    "Indian Physical Geography": [
+      "Geological Structure of India",
+      "Physiographic Divisions",
+      "Himalayas",
+      "Northern Plains",
+      "Peninsular Plateau",
+      "Indian Desert",
+      "Coastal Plains",
+      "Islands of India",
+      "Drainage System",
+      "Indian Rivers",
+      "Indian Lakes",
+      "Indian Climate",
+      "Monsoon in India",
+      "Natural Vegetation",
+      "Soils of India"
+    ],
+
+    "Resources": [
+      "Natural Resources",
+      "Mineral Resources",
+      "Energy Resources",
+      "Renewable Resources",
+      "Non-Renewable Resources",
+      "Water Resources",
+      "Land Resources",
+      "Forest Resources",
+      "Resource Conservation"
+    ],
+
+    "Agriculture": [
+      "Types of Agriculture",
+      "Cropping Seasons",
+      "Major Crops",
+      "Green Revolution",
+      "Irrigation",
+      "Agricultural Regions",
+      "Plantation Crops",
+      "Food Security",
+      "Agro Climatic Zones"
+    ],
+
+    "Industries": [
+      "Industrial Location Factors",
+      "Iron and Steel Industry",
+      "Cotton Textile Industry",
+      "Sugar Industry",
+      "Cement Industry",
+      "Automobile Industry",
+      "IT Industry",
+      "Industrial Corridors",
+      "Industrial Regions"
+    ],
+
+    "Transport and Communication": [
+      "Road Transport",
+      "Railways",
+      "Waterways",
+      "Air Transport",
+      "Pipelines",
+      "Ports",
+      "Communication Networks",
+      "Logistics"
+    ],
+
+    "Human Geography": [
+      "Population",
+      "Population Distribution",
+      "Population Density",
+      "Migration",
+      "Urbanization",
+      "Rural Settlements",
+      "Urban Settlements",
+      "Human Development Index",
+      "Demographic Transition"
+    ],
+
+    "Map Work": [
+      "India Map Practice",
+      "World Map Practice",
+      "Mountain Ranges",
+      "Rivers",
+      "Lakes",
+      "National Parks",
+      "Biosphere Reserves",
+      "Important Cities",
+      "International Boundaries",
+      "Important Passes"
+    ]
+  }
+}

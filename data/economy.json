@@ -1,0 +1,205 @@
+{
+    "Economy": {
+
+        "Basics of Economics": [
+            "Meaning of Economics",
+            "Microeconomics",
+            "Macroeconomics",
+            "Positive and Normative Economics",
+            "Economic Systems",
+            "Factors of Production",
+            "Opportunity Cost",
+            "Production Possibility Curve"
+        ],
+
+        "National Income": [
+            "GDP",
+            "GNP",
+            "NNP",
+            "NDP",
+            "Market Price and Factor Cost",
+            "Nominal GDP",
+            "Real GDP",
+            "GDP Deflator",
+            "Per Capita Income",
+            "Methods of National Income Calculation",
+            "Green GDP"
+        ],
+
+        "Indian Economy": [
+            "Features of Indian Economy",
+            "Economic Planning",
+            "NITI Aayog",
+            "Five Year Plans",
+            "Economic Reforms 1991",
+            "Liberalization",
+            "Privatization",
+            "Globalization"
+        ],
+
+        "Banking": [
+            "Money",
+            "Functions of Money",
+            "Types of Money",
+            "Reserve Bank of India",
+            "Commercial Banks",
+            "Scheduled and Non-Scheduled Banks",
+            "Cooperative Banks",
+            "Payments Banks",
+            "Small Finance Banks",
+            "NBFC",
+            "Digital Banking",
+            "UPI",
+            "NEFT",
+            "RTGS",
+            "IMPS"
+        ],
+
+        "Monetary Policy": [
+            "Monetary Policy",
+            "Repo Rate",
+            "Reverse Repo Rate",
+            "Standing Deposit Facility",
+            "Marginal Standing Facility",
+            "Bank Rate",
+            "Cash Reserve Ratio",
+            "Statutory Liquidity Ratio",
+            "Open Market Operations",
+            "Liquidity Adjustment Facility",
+            "Monetary Policy Committee"
+        ],
+
+        "Fiscal Policy": [
+            "Fiscal Policy",
+            "Revenue Receipt",
+            "Capital Receipt",
+            "Revenue Expenditure",
+            "Capital Expenditure",
+            "Fiscal Deficit",
+            "Revenue Deficit",
+            "Primary Deficit",
+            "Budget",
+            "Finance Bill",
+            "Appropriation Bill"
+        ],
+
+        "Taxation": [
+            "Direct Tax",
+            "Indirect Tax",
+            "Income Tax",
+            "Corporate Tax",
+            "GST",
+            "Custom Duty",
+            "Excise Duty",
+            "Cess",
+            "Surcharge",
+            "Tax Administration"
+        ],
+
+        "Inflation": [
+            "Inflation",
+            "Deflation",
+            "Disinflation",
+            "Stagflation",
+            "Hyperinflation",
+            "Demand Pull Inflation",
+            "Cost Push Inflation",
+            "Consumer Price Index",
+            "Wholesale Price Index"
+        ],
+
+        "External Sector": [
+            "Balance of Payments",
+            "Balance of Trade",
+            "Current Account",
+            "Capital Account",
+            "Foreign Exchange",
+            "Exchange Rate",
+            "Currency Depreciation",
+            "Currency Appreciation",
+            "Foreign Direct Investment",
+            "Foreign Portfolio Investment"
+        ],
+
+        "International Organizations": [
+            "IMF",
+            "World Bank",
+            "WTO",
+            "ADB",
+            "AIIB",
+            "New Development Bank"
+        ],
+
+        "Agriculture Economy": [
+            "MSP",
+            "Food Corporation of India",
+            "Public Distribution System",
+            "Agricultural Marketing",
+            "APMC",
+            "e-NAM",
+            "Food Security"
+        ],
+
+        "Industry": [
+            "MSME",
+            "Make in India",
+            "Industrial Policy",
+            "Industrial Corridors",
+            "Start-up India",
+            "Stand-up India",
+            "PLI Scheme"
+        ],
+
+        "Infrastructure": [
+            "Roads",
+            "Railways",
+            "Ports",
+            "Airports",
+            "Power Sector",
+            "Renewable Energy",
+            "National Infrastructure Pipeline"
+        ],
+
+        "Poverty and Unemployment": [
+            "Poverty",
+            "Poverty Line",
+            "Multidimensional Poverty",
+            "Types of Unemployment",
+            "Employment Schemes",
+            "Skill India"
+        ],
+
+        "Financial Markets": [
+            "SEBI",
+            "Stock Market",
+            "Primary Market",
+            "Secondary Market",
+            "Mutual Funds",
+            "Bonds",
+            "Debentures",
+            "Government Securities"
+        ],
+
+        "Government Schemes": [
+            "PM Jan Dhan Yojana",
+            "PM Mudra Yojana",
+            "PM Vishwakarma",
+            "PM SVANidhi",
+            "Atmanirbhar Bharat",
+            "Digital India"
+        ],
+
+        "Economic Survey": [
+            "Economic Survey",
+            "Important Chapters",
+            "Key Findings"
+        ],
+
+        "Union Budget": [
+            "Budget Process",
+            "Budget Highlights",
+            "Budget Terminology",
+            "Important Budget Concepts"
+        ]
+    }
+}

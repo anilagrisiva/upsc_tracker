@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UPSC Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div>
+    <p id="toast"></p>
+</div>
+    <!-- ===========================
+            HEADER
+    ============================ -->
+
+    <header>
+        <div class="headerBar">
+        <h1>📚 UPSC Tracker</h1>
+
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="Search topics...">
+        <button id="theme-toggle" style="padding: 8px 14px; cursor: pointer; border-radius: 20px; border: 1px solid var(--border-color); background: var(--body-bg); color: var(--text-main); font-weight: bold;">
+    🌙 Dark Mode
+  </button>
+        </div>
+        <div id="topInfo"></div>
+
+    </header>
+
+
+
+    <!-- ===========================
+            DASHBOARD
+    ============================ -->
+
+    <section id="dashboard">
+
+        <div class="card">
+
+            <h2>Overall Progress</h2>
+
+            <div class="progress-container">
+
+                <div id="overallProgressBar"></div>
+
+            </div>
+            <div class="progress-stats"><div ><p id="overallPercentage">0%</p>
+                 <p id="overallCount">0 / 0 Topics Completed</p></div>
+                 <button id="saveDayBtn" class="save-update">💾 Save Progress</button>
+            </div>
+
+            <!-- ==========================
+     UPSC Journey Timeline
+========================== -->
+        <div class="journey-section">
+            <h2>🚀 Daily Updates</h2>
+            <div id="journeyTimeline" class="journey-timeline"></div>
+        </div>
+        <!-- ### data card -->
+         <div id="dayEditor" class="day-editor">
+
+    <h2 id="editorDate">📅 Daily Progress</h2>
+
+    <div class="editor-grid">
+
+        <div class="form-group">
+            <label>Study Time (minutes)</label>
+            <input type="number" id="studyTime">
+        </div>
+
+        <div class="form-group">
+            <label>Daily Score</label>
+            <input type="number" id="score" readonly>
+        </div>
+
+        <div class="form-group">
+            <label>Badge</label>
+            <input type="text" id="badge" readonly>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <h3>📚 Completed Topics</h3>
+
+    <textarea
+        id="completedTopics"
+        rows="3"
+        readonly
+        placeholder="Completed topics will appear here..."
+    ></textarea>
+
+    <hr>
+
+    <h3>📝 Notes</h3>
+
+    <textarea
+        id="notes"
+        rows="8"
+        placeholder="Write today's notes..."
+    ></textarea>
+
+    <hr>
+
+    <!-- <textarea
+        id="essayTests"
+        rows="3"
+        placeholder="Essay file names..."
+    ></textarea> -->
+
+    <br><br>
+
+    <!-- <button id="saveDayBtn">
+
+        💾 Save Today's Progress
+
+    </button> -->
+    <h3>Uploaded Essays</h3>
+
+<div id="essayList"></div>
+
+</div>
+        </div>
+
+    </section>
+
+
+
+    <!-- ===========================
+            MAIN CONTENT
+    ============================ -->
+
+    <main>
+
+        <!-- LEFT PANEL -->
+
+        <aside id="subjectsPanel">
+
+            <h2>Subjects</h2>
+
+            <ul id="subjectList">
+
+                <!-- JavaScript will generate -->
+
+            </ul>
+
+        </aside>
+
+
+
+        <!-- RIGHT PANEL -->
+
+        <section id="topicsPanel">
+
+            <div id="welcome">
+
+                <h2>Welcome 👋</h2>
+
+                <p>
+
+                    Select any subject from the left panel.
+
+                </p>
+
+            </div>
+
+            <div id="topicsContainer">
+
+                <!-- JavaScript will generate -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ===========================
+            FOOTER
+    ============================ -->
+
+    <footer>
+
+        UPSC Tracker vsf.0
+
+    </footer>
+
+
+
+    <!-- ===========================
+            JAVASCRIPT
+    ============================ -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> // db script -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="script.js"></script> 
+    <script type="module" src="db.js"></script>
+
+
+    <!-- ===========================
+        NOTES POPUP
+=========================== -->
+
+<div id="notesModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2 id="notesTitle">Write Notes</h2>
+
+        <textarea
+            id="notesText"
+            rows="20"
+            placeholder="Write your notes here..."
+        ></textarea>
+
+        <div class="modal-buttons">
+
+            <button id="saveNotesBtn">
+                💾 Save
+            </button>
+
+            <button id="closeNotesBtn">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div>
+
+<button id="loadCloudBtn">
+    <svg viewBox="0 0 24 24" width="28" height="28">
+        <path fill="white"
+            d="M12 4V1L17 6L12 11V8C9.24 8 7 10.24 7 13S9.24 18 12 18C14.21 18 16.09 16.56 16.75 14.5H19.84C19.08 17.44 15.82 20 12 20C8.13 20 5 16.87 5 13S8.13 6 12 6V4Z"/>
+    </svg>
+</button>
+<!-- ===================================== -->
+<!-- Essay Modal -->
+<!-- ===================================== -->
+
+<div id="essayModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2>Add Essay</h2>
+
+        <input
+            type="text"
+            id="essayTitle"
+            placeholder="Essay Title"
+        >
+
+        <br><br>
+
+        <!-- <input
+            type="file"
+            id="essayFiles"
+            multiple
+            accept="image/*"
+        > -->
+        <input
+            type="file"
+            id="essayFiles"
+            multiple
+            accept="application/pdf"
+        />
+
+        <br><br>
+
+        <button id="saveEssayBtn">
+            Save
+        </button>
+
+        <button id="closeEssayBtn">
+            Cancel
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ===================================== -->
+<!-- Essay Viewer -->
+<!-- ===================================== -->
+
+<div id="essayViewer" class="modal">
+
+    <div class="essay-viewer-content">
+
+        <h2 id="viewerTitle"></h2>
+
+        <div id="viewerImages"></div>
+
+     <div class="viewer-footer">
+
+    <button id="closeViewerBtn" class="viewer-btn">
+        ✖ Close
+    </button>
+
+</div>
+
+    </div>
+
+</div>
+
+</div>
+
+     <!-- floating icon  -->
+<!-- ===================================== -->
+<!-- Floating Dictionary -->
+<!-- ===================================== -->
+
+<div id="dictionaryBook">
+    📖
+</div>
+
+<div id="dictionaryWindow">
+
+    <div id="dictionaryHeader">
+
+        <span>📖 UPSC Dictionary</span>
+
+        <button id="closeDictionary">
+            ✖
+        </button>
+
+    </div>
+
+    <div class="dictionary-body">
+
+        <input
+            type="text"
+            id="dictionarySearch"
+            placeholder="Search..."
+        >
+
+        <input
+            type="text"
+            id="dictionaryKeyword"
+            placeholder="Keyword"
+        >
+
+        <textarea
+            id="dictionaryDefinition"
+            rows="8"
+            placeholder="Definition..."
+        ></textarea>
+
+        <div class="dictionary-actions">
+
+            <button id="dictionarySave">
+                💾 Save
+            </button>
+
+            <button id="dictionaryNew">
+                ➕ New
+            </button>
+
+            <button id="dictionaryDelete">
+                🗑 Delete
+            </button>
+
+        </div>
+
+        <hr>
+
+        <div id="dictionaryResults"></div>
+
+    </div>
+
+</div>
+    </body>
+
+</html>

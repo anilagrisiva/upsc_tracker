@@ -204,7 +204,7 @@ document
             await downloadDayProgress();
             await downloadEssays();
             await downloadDictionary();
-            // location.reload();
+            location.reload();
         } catch (err) {
             console.error(err);
         } finally {

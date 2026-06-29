@@ -31,8 +31,10 @@ const SESSION_TIMEOUT = 10 * 60 * 1000; // 30 minutes
 const lastActive = Number(localStorage.getItem("lastActiveTime")) || 0;
 
 if (Date.now() - lastActive > SESSION_TIMEOUT) {
-    localStorage.removeItem("upscUserId");
-    location.reload();
+  if (localStorage.getItem("upscUserId")) {
+      localStorage.removeItem("upscUserId");
+      location.reload();
+  }
 }
 
 let MY_ACCOUNT_ID = localStorage.getItem("upscUserId");

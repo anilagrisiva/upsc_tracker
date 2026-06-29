@@ -508,7 +508,7 @@ function openNotes(subject, chapter, topic) {
     const history = loadStudyHistory();
     
     if (selectedDate != getDateKey(new Date())) {
-        showToast("Past records cannot be updated.");
+        showToast("Past or records cannot be updated.");
         return;
     }
     if (!history[selectedDate]) {

@@ -729,6 +729,8 @@ function autoSaveProgress() {
         console.error("startCheck error:", e);
     }
 }
+
+autoSaveProgress();
 setInterval(autoSaveProgress, 1 * 60 * 1000);
 
 function saveTodayCheckedBoxes(data) {

@@ -1,4 +1,3 @@
-
 import { syncDictionaryToCloud, syncDayToCloud, syncEssayToCloud } from './db.js';
 // ==========================================
 // UPSC Tracker - Version 1.0
@@ -112,6 +111,7 @@ async function loadSyllabus() {
     createSubjectList();
     updateProgress();
     generateJourneyTimeline();
+    autoSaveProgress();
 }
 
 // ------------------------------------------
@@ -730,9 +730,6 @@ function autoSaveProgress() {
     }
 }
 
-autoSaveProgress();
-setInterval(autoSaveProgress, 1 * 60 * 1000);
-
 function saveTodayCheckedBoxes(data) {
     localStorage.setItem("todaysSelectedBoxes_" + getDateKey(new Date()), JSON.stringify(data));
 }
@@ -777,7 +774,7 @@ toggleButton.addEventListener('click', () => {
 
 // Load App Syllabus Engine
 loadSyllabus();
-
+setInterval(autoSaveProgress, 1 * 60 * 1000);
 // ------------------------------------------
 // Contextual Modals Handlers
 // ------------------------------------------

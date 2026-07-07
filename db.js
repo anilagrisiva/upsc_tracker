@@ -160,7 +160,7 @@ async function syncDictionaryToCloud(localDict) {
             await supabaseClient.from("dictionary").upsert({
                 user_id: getUserId(),
                 keyword: keyword,
-                definition: val.definition || ""
+                definition: val || ""
             });
         }
     } catch (e) {

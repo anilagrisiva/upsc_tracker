@@ -1059,7 +1059,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
 
         const dictionary = loadDictionary();
-        dictionary[keyword] = { definition };
+        dictionary[keyword] = definition;
         saveDictionary(dictionary);
         syncDictionaryToCloud({keyword : definition})
         refreshResults(searchBox.value);

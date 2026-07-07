@@ -1035,7 +1035,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
                 div.onclick = function () {
                     keywordBox.value = key;
-                    definitionBox.value = dictionary[key].definition;
+                    definitionBox.value = dictionary[key];
                 };
                 results.appendChild(div);
             });

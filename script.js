@@ -1025,7 +1025,7 @@ window.addEventListener("DOMContentLoaded", () => {
         Object.keys(dictionary)
             .sort()
             .forEach(key => {
-                if (!key.toLowerCase().includes(text) && !dictionary[key].definition.toLowerCase().includes(text)) return;
+                if (!key.toLowerCase().includes(text) && !dictionary[key].toLowerCase().includes(text)) return;
 
                 const div = document.createElement("div");
                 div.style.padding = "8px";

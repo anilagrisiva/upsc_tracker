@@ -25,38 +25,52 @@ const subjects = [
   "csat"
 ];
 
-const SESSION_TIMEOUT = 10 * 60 * 1000; // 30 minutes
-
-const lastActive = Number(localStorage.getItem("lastActiveTime")) || 0;
-
-if (Date.now() - lastActive > SESSION_TIMEOUT) {
-  if (localStorage.getItem("upscUserId")) {
-      localStorage.removeItem("upscUserId");
-      location.reload();
-  }
+const SESSION_TIMEOUT = 10 * 60 * 1000; // 10 minutes
+function logout() {
+    localStorage.removeItem("upscUserId");
+    localStorage.clear();
+    // location.reload();
 }
+function updateActivity() {
+    localStorage.setItem("lastActiveTime", Date.now());
+}
+function checkTimeout() {
+    const lastActive = Number(localStorage.getItem("lastActiveTime")) || 0;
+    if (Date.now() - lastActive > SESSION_TIMEOUT) {
+        logout();
+    }
+}
+// Check immediately when page loads
+checkTimeout();
 
+// Get stored User ID
 let MY_ACCOUNT_ID = localStorage.getItem("upscUserId");
-
+// Ask only if not logged in
 if (!MY_ACCOUNT_ID) {
     MY_ACCOUNT_ID = prompt("Enter User ID")?.trim();
-
     if (!MY_ACCOUNT_ID) {
         throw new Error("User ID required");
     }
     localStorage.setItem("upscUserId", MY_ACCOUNT_ID);
 }
-
-function updateActivity() {
-    localStorage.setItem("lastActiveTime", Date.now());
-}
-
-["click", "keydown", "mousemove", "touchstart"].forEach(event =>
+// User activity updates timer
+["click", "mousemove", "keydown", "touchstart"].forEach(event =>
     document.addEventListener(event, updateActivity)
 );
-
+// Check every second
+setInterval(checkTimeout, 1000);
+// Check when returning to the tab
+document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) {
+        checkTimeout();
+    }
+});
+// Start timer
 updateActivity();
-
+document.getElementById("logoutBtn").addEventListener("click", () => {
+    logout();
+    location.reload();
+});
 
 let syllabus = {};
 let currentSubject = null;
@@ -613,7 +627,7 @@ window.viewEssay = viewEssay;
 // ------------------------------------------
 function syncCheckboxesFromHistory() {
     Object.keys(localStorage).forEach(key => {
-        if (key !== STORAGE_KEY && key !== "startDate" && key !== "todaysSelectedBoxes_" + getDateKey(new Date()) && key !== DICTIONARY_KEY && key !== lastActive && key !== "upscUserId" && key !== "lastActiveTime") {
+        if (key !== STORAGE_KEY && key !== "startDate" && key !== "todaysSelectedBoxes_" + getDateKey(new Date()) && key !== DICTIONARY_KEY   && key !== "upscUserId" && key !== "lastActiveTime") {
             localStorage.removeItem(key);
         }
     });
@@ -756,7 +770,7 @@ document.getElementById("saveDayBtn").addEventListener("click", saveDayProgress)
 const toggleButton = document.getElementById('theme-toggle');
 if (localStorage.getItem('theme') === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
-    toggleButton.textContent = '☀️ Light Mode';
+    toggleButton.textContent = '☀️ Light';
 }
 
 toggleButton.addEventListener('click', () => {
@@ -764,11 +778,11 @@ toggleButton.addEventListener('click', () => {
     if (theme === 'dark') {
         document.documentElement.removeAttribute('data-theme');
         localStorage.setItem('theme', 'light');
-        toggleButton.textContent = '🌙 Dark Mode';
+        toggleButton.textContent = '🌙 Dark';
     } else {
         document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
-        toggleButton.textContent = '☀️ Light Mode';
+        toggleButton.textContent = '☀️ Light';
     }
 });
 

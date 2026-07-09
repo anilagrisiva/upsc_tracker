@@ -501,7 +501,8 @@ function saveDayProgress() {
     if (updateSelectedDate.score >= 30) updateSelectedDate.badge = "👑";
     else if (updateSelectedDate.score >= 20) updateSelectedDate.badge = "🏆";
     else if (updateSelectedDate.score >= 10) updateSelectedDate.badge = "🔥";
-    else updateSelectedDate.badge = "📖";
+    else if (updateSelectedDate.score >= 1) updateSelectedDate.badge = "📖";
+    else updateSelectedDate.badge = "🚫";
 
     updateSelectedDate.dailyNotes = document.getElementById("notes").value;
 

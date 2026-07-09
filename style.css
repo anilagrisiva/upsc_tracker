@@ -111,7 +111,7 @@ header{
 }
 
 header h1{
-    font-size:28px;
+    font-size:26px;
 }
 .headerBar{
     color:white;
@@ -1337,4 +1337,27 @@ footer{
 
 #loadCloudBtn:hover::after{
     opacity: 1;
+}
+
+/* LOGOUT btn */
+#logoutBtn {
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    
+    background: transparent;
+    color: inherit;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+#logoutBtn:hover {
+    background-color: rgba(128, 128, 128, 0.18);
+}
+
+#logoutBtn:active {
+    transform: scale(0.92);
 }

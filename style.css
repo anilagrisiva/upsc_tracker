@@ -1104,41 +1104,23 @@ footer{
 /* ==========================
    Floating Dictionary Book
 ========================== */
-
 #dictionaryBook{
-
     position:fixed;
-
     width:70px;
-
     height:70px;
-
-    right:30px;
-
-    bottom:30px;
-
+    right:10px;
+    bottom:50px;
     border-radius:50%;
-
     background:#1976d2;
-
     color:white;
-
     font-size:32px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     cursor:grab;
-
     z-index:999999;
-
     user-select:none;
-
     box-shadow:0 5px 20px rgba(0,0,0,.25);
-
 }
 
 #dictionaryBook:active{

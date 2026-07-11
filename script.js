@@ -29,7 +29,6 @@ const SESSION_TIMEOUT = 10 * 60 * 1000; // 10 minutes
 function logout() {
     localStorage.removeItem("upscUserId");
     localStorage.clear();
-    location.reload();
 }
 function updateActivity() {
     localStorage.setItem("lastActiveTime", Date.now());

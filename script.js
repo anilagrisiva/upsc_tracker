@@ -1,4 +1,4 @@
-import { syncDictionaryToCloud, syncDayToCloud, syncEssayToCloud } from './db.js';
+import { syncDictionaryToCloud, syncDayToCloud, syncEssayToCloud, loadCloudData } from './db.js';
 // ==========================================
 // UPSC Tracker - Version 1.0
 // ==========================================
@@ -52,6 +52,7 @@ if (!MY_ACCOUNT_ID) {
         throw new Error("User ID required");
     }
     localStorage.setItem("upscUserId", MY_ACCOUNT_ID);
+    await loadCloudData();
 }
 // User activity updates timer
 ["click", "mousemove", "keydown", "touchstart"].forEach(event =>

@@ -180,13 +180,16 @@ async function syncEssayToCloud(blob_data) {
     }
 }
 
-
-export {
-    syncDayToCloud,
-    syncDictionaryToCloud,
-    syncEssayToCloud
-};
-
+async function loadCloudData() {
+    if (!supabaseClient) {
+        console.log("disconnected");
+        return;
+    }
+    console.log("connected");
+    await downloadDayProgress();
+    await downloadEssays();
+    await downloadDictionary();
+}
 // DB load function
 document
     .getElementById("loadCloudBtn")
@@ -195,15 +198,7 @@ document
         btn.disabled = true;
         btn.classList.add("loading");
         try {
-            if (supabaseClient) {
-                console.log("connected");
-            } else {
-                console.log("disconnected");
-                return;
-            }
-            await downloadDayProgress();
-            await downloadEssays();
-            await downloadDictionary();
+            await loadCloudData();
             location.reload();
         } catch (err) {
             console.error(err);
@@ -212,3 +207,10 @@ document
             btn.classList.remove("loading");
         }
     });
+
+export {
+    syncDayToCloud,
+    syncDictionaryToCloud,
+    syncEssayToCloud,
+    loadCloudData
+};

@@ -548,7 +548,7 @@ function saveEssayToDB(item) {
 }
 
 // exporting db
-export  {saveEssayToDB}
+export  {saveEssayToDB, getDateKey}
 
 function renderEssayList(essays) {
     const container = document.getElementById("essayList");

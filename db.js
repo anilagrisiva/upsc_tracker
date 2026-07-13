@@ -30,6 +30,9 @@ function saveStudyHistory(data) {
         STORAGE_KEY,
         JSON.stringify(data)
     );
+    let tempKey = getDateKey(new Date());
+    // Using optional chaining (?.) to prevent crashes, mapping the strings, and falling back to "[]"
+    localStorage.setItem("todaysSelectedBoxes_" + tempKey, JSON.stringify(data[tempKey]?.completedTopics?.map(t => t.replaceAll(" → ", "_"))) || "[]");
 }
 
 // Load from db 

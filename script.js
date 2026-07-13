@@ -24,11 +24,14 @@ const subjects = [
   "ethics",
   "csat"
 ];
+// Get stored User ID
+let MY_ACCOUNT_ID = localStorage.getItem("upscUserId");
 
 const SESSION_TIMEOUT = 10 * 60 * 1000; // 10 minutes
 function logout() {
     localStorage.removeItem("upscUserId");
     localStorage.clear();
+    MY_ACCOUNT_ID = "";
 }
 function updateActivity() {
     localStorage.setItem("lastActiveTime", Date.now());
@@ -37,13 +40,12 @@ function checkTimeout() {
     const lastActive = Number(localStorage.getItem("lastActiveTime")) || 0;
     if (Date.now() - lastActive > SESSION_TIMEOUT) {
         logout();
+        location.reload();
     }
 }
 // Check immediately when page loads
 checkTimeout();
 
-// Get stored User ID
-let MY_ACCOUNT_ID = localStorage.getItem("upscUserId");
 // Ask only if not logged in
 if (!MY_ACCOUNT_ID) {
     MY_ACCOUNT_ID = prompt("Enter User ID")?.trim();
@@ -219,7 +221,7 @@ function generateJourneyTimeline(centerToday = true) {
             icon = "⭐";
         } else if (compareDate.getTime() === currentDate.getTime()) {
             card.classList.add("today");
-            icon = "🔥";
+            icon = "💻";
         } else {
             card.classList.add("future");
             icon = "⏳";
@@ -548,7 +550,7 @@ function saveEssayToDB(item) {
 }
 
 // exporting db
-export  {saveEssayToDB}
+export  {saveEssayToDB, getDateKey}
 
 function renderEssayList(essays) {
     const container = document.getElementById("essayList");
@@ -766,7 +768,11 @@ document.getElementById("searchBox").addEventListener("input", function () {
     });
 });
 
-document.getElementById("saveDayBtn").addEventListener("click", saveDayProgress);
+// document.getElementById("saveDayBtn").addEventListener("click", saveDayProgress);
+document.getElementById("saveDayBtn").addEventListener("click", () => {
+    saveDayProgress();           // 1. Runs save logic
+    generateJourneyTimeline();   // 2. Automatically reloads the timeline right after
+});
 
 const toggleButton = document.getElementById('theme-toggle');
 if (localStorage.getItem('theme') === 'dark') {

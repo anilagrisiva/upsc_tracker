@@ -768,7 +768,11 @@ document.getElementById("searchBox").addEventListener("input", function () {
     });
 });
 
-document.getElementById("saveDayBtn").addEventListener("click", saveDayProgress);
+// document.getElementById("saveDayBtn").addEventListener("click", saveDayProgress);
+document.getElementById("saveDayBtn").addEventListener("click", () => {
+    saveDayProgress();           // 1. Runs save logic
+    generateJourneyTimeline();   // 2. Automatically reloads the timeline right after
+});
 
 const toggleButton = document.getElementById('theme-toggle');
 if (localStorage.getItem('theme') === 'dark') {

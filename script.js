@@ -219,7 +219,7 @@ function generateJourneyTimeline(centerToday = true) {
             icon = "⭐";
         } else if (compareDate.getTime() === currentDate.getTime()) {
             card.classList.add("today");
-            icon = "🔥";
+            icon = "💻";
         } else {
             card.classList.add("future");
             icon = "⏳";

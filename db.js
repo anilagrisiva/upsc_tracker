@@ -1,7 +1,7 @@
 // ========================================================
 // supabase-sync.js - Cloud Synchronization Pipeline
 // ========================================================
-import { saveEssayToDB } from "./script.js";
+import { saveEssayToDB, getDateKey } from "./script.js";
 
 // const getUserId() = "upsc_strike";
 function getUserId() { return localStorage.getItem("upscUserId")}

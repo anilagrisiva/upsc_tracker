@@ -13,6 +13,7 @@ const DICTIONARY_KEY = "upscDictionary";
 const examDate = new Date("2027-04-25T00:00:00"); 
 // const MY_ACCOUNT_ID = "upsc_strike";
 let previousPageOpened = false;
+let reloadStatus = false;
 
 const subjects = [
   "history",
@@ -32,6 +33,7 @@ function logout() {
     localStorage.removeItem("upscUserId");
     localStorage.clear();
     MY_ACCOUNT_ID = "";
+    reloadStatus = false;
 }
 function updateActivity() {
     localStorage.setItem("lastActiveTime", Date.now());
@@ -40,7 +42,9 @@ function checkTimeout() {
     const lastActive = Number(localStorage.getItem("lastActiveTime")) || 0;
     if (Date.now() - lastActive > SESSION_TIMEOUT) {
         logout();
+      if (reloadStatus){
         location.reload();
+      }
     }
 }
 // Check immediately when page loads
@@ -54,6 +58,7 @@ if (!MY_ACCOUNT_ID) {
     }
     localStorage.setItem("upscUserId", MY_ACCOUNT_ID);
     await loadCloudData();
+    reloadStatus = true;
 }
 // User activity updates timer
 ["click", "mousemove", "keydown", "touchstart"].forEach(event =>

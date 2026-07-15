@@ -33,7 +33,6 @@ function logout() {
     localStorage.removeItem("upscUserId");
     localStorage.clear();
     MY_ACCOUNT_ID = "";
-    reloadStatus = false;
 }
 function updateActivity() {
     localStorage.setItem("lastActiveTime", Date.now());
@@ -44,6 +43,7 @@ function checkTimeout() {
         logout();
       if (reloadStatus){
         location.reload();
+        reloadStatus = false;
       }
     }
 }

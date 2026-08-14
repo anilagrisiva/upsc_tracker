@@ -28,8 +28,133 @@ const subjects = [
 // Get stored User ID
 let MY_ACCOUNT_ID = localStorage.getItem("upscUserId");
 
+// ==========================================
+// AUTOMATIC STUDY TIME TRACKER
+// ==========================================
+
+const STUDY_DATE_KEY = "upscStudyDate";
+const STUDY_MINUTES_KEY = "upscStudyMinutes";
+let studyTimer = null;
+
+// Get todays date
+function getStudyToday() {
+    return getDateKey(new Date());
+}
+
+// Initialize study tracker
+function initializeStudyTracker() {
+    const userId = localStorage.getItem("upscUserId");
+    if (!userId) {
+        console.log("No upscUserId - study tracker not started");
+        return;
+    }
+    const today = getStudyToday();
+    const savedDate = localStorage.getItem(STUDY_DATE_KEY);
+
+    // In case of New day
+    if (savedDate !== today) {
+        localStorage.setItem(STUDY_DATE_KEY, today);
+        localStorage.setItem(STUDY_MINUTES_KEY, "0");
+        return;
+    }
+
+    // Same day
+    if (!localStorage.getItem(STUDY_MINUTES_KEY)) {
+        localStorage.setItem(STUDY_MINUTES_KEY, "0");
+    }
+}
+
+// Update study time every 5 minutes
+async function updateStudyTime() {
+    const userId = localStorage.getItem("upscUserId"); 
+
+    if (!userId) {                            // CHECK USER EVERY TIME
+        console.log( "upscUserId missing - stopping study tracker" );
+        if (studyTimer) {
+            clearInterval(studyTimer);
+            studyTimer = null;
+        }
+        return;
+    }
+
+    const today = getStudyToday();
+    const savedDate = localStorage.getItem(STUDY_DATE_KEY);
+
+    // NEW DAY
+    if (savedDate !== today) { localStorage.setItem( STUDY_DATE_KEY, today );
+        localStorage.setItem( STUDY_MINUTES_KEY, "0" );
+        return;
+    }
+
+    // GET LOCAL STUDY TIME
+    let studyMinutes = Number( localStorage.getItem( STUDY_MINUTES_KEY )) || 0;
+
+    // Recover study time from existing record 
+    if (studyMinutes === 0) {
+        const history = loadStudyHistory();
+        const todayRecord = history[today];
+        if (todayRecord) {
+            const dbStudyTime =Number(todayRecord.studyTime) || 0;
+
+            if (dbStudyTime > 0) {
+                studyMinutes = dbStudyTime;
+                localStorage.setItem( STUDY_MINUTES_KEY, studyMinutes.toString() );
+            }
+        }
+    }
+    // ADD Time in INUTES
+    studyMinutes += 1;
+    // SAVE LOCAL STORAGE
+    localStorage.setItem( STUDY_MINUTES_KEY, studyMinutes.toString());
+    // UPDATE TODAY'S RECORD
+    const history = loadStudyHistory();
+    if (!history[today]) {
+        history[today] = createDayRecord(today);
+    }
+    history[today].studyTime = studyMinutes;
+
+    // UPDATE UI
+    if (selectedDate === today) {
+        const studyTimeInput =
+            document.getElementById(
+                "studyTime"
+            );
+        if (studyTimeInput) {
+            studyTimeInput.value = formatStudyTime(studyMinutes);
+        }
+    }
+
+    // SAVE LOCAL HISTORY
+    saveStudyHistory(history);
+}
+
+// Start tracker
+function startStudyTracker() {
+    const userId = localStorage.getItem("upscUserId");
+    if (!userId) {
+        return;
+    }
+    initializeStudyTracker();
+    // Prevent duplicate timers
+    if (studyTimer) {
+        clearInterval(studyTimer);
+    }
+
+    // EVERY 5 MINUTES
+    studyTimer = setInterval(
+        updateStudyTime,
+        1 * 60 * 1000
+    );
+}
+
 const SESSION_TIMEOUT = 10 * 60 * 1000; // 10 minutes
 function logout() {
+    // Stop study timer immediately
+    if (studyTimer) {
+        clearInterval(studyTimer);
+        studyTimer = null;
+    }
+
     localStorage.removeItem("upscUserId");
     localStorage.clear();
     MY_ACCOUNT_ID = "";
@@ -58,10 +183,11 @@ if (!MY_ACCOUNT_ID) {
     }
     localStorage.setItem("upscUserId", MY_ACCOUNT_ID);
     await loadCloudData();
+    startStudyTracker();
     reloadStatus = true;
 }
 // User activity updates timer
-["click", "mousemove", "keydown", "touchstart"].forEach(event =>
+["click", "mousemove", "keydown", "touchstart", "wheel"].forEach(event =>
     document.addEventListener(event, updateActivity)
 );
 // Check every second
@@ -94,6 +220,20 @@ const uiState = {
     editorOpen: false
 };
 
+function formatStudyTime(totalMinutes) {
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+
+    if (hours === 0) {
+        return `${minutes} min`;
+    }
+
+    if (minutes === 0) {
+        return `${hours} hr`;
+    }
+
+    return `${hours} hr ${minutes} min`;
+}
 // ------------------------------------------
 // Initialization & Database (IndexedDB)
 // ------------------------------------------
@@ -449,7 +589,7 @@ function openDay(dateKey) {
     }
 
     document.getElementById("editorDate").textContent = "Progress On " + dateKey;
-    document.getElementById("studyTime").value = tempStudyData.studyTime;
+    document.getElementById("studyTime").value = formatStudyTime(tempStudyData.studyTime); // tempStudyData.studyTime;
     document.getElementById("score").value = tempStudyData.score;
     document.getElementById("badge").value = tempStudyData.badge;
 
@@ -486,7 +626,7 @@ function saveDayProgress() {
         studyHistory[selectedDate] = createDayRecord(selectedDate);
     }
     let updateSelectedDate = studyHistory[selectedDate]
-    updateSelectedDate.studyTime = Number(document.getElementById("studyTime").value) || 0;
+    // updateSelectedDate.studyTime = Number(document.getElementById("studyTime").value) || 0;
     updateSelectedDate.score = Number(document.getElementById("score").value);
     updateSelectedDate.badge = document.getElementById("badge").value;
     updateSelectedDate.completedTopics = getCompletedTopics();
@@ -635,7 +775,7 @@ window.viewEssay = viewEssay;
 // ------------------------------------------
 function syncCheckboxesFromHistory() {
     Object.keys(localStorage).forEach(key => {
-        if (key !== STORAGE_KEY && key !== "startDate" && key !== "todaysSelectedBoxes_" + getDateKey(new Date()) && key !== DICTIONARY_KEY   && key !== "upscUserId" && key !== "lastActiveTime") {
+        if (key !== STORAGE_KEY && key !== "startDate" && key !== "todaysSelectedBoxes_" + getDateKey(new Date()) && key !== DICTIONARY_KEY   && key !== "upscUserId" && key !== "lastActiveTime" && key !== "upscStudyMinutes" && key !== "upscStudyDate") {
             localStorage.removeItem(key);
         }
     });
@@ -801,6 +941,7 @@ toggleButton.addEventListener('click', () => {
 // Load App Syllabus Engine
 loadSyllabus();
 setInterval(autoSaveProgress, 1 * 60 * 1000);
+startStudyTracker();
 // ------------------------------------------
 // Contextual Modals Handlers
 // ------------------------------------------
